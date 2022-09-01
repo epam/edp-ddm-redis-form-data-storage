@@ -1,0 +1,7 @@
+storage:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000
+    database: 0
+    password: password

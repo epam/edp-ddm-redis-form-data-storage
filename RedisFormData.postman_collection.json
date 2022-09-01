@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "b34ca89c-9e61-4a59-b26f-e714b8411e2d",
+		"name": "RedisFormData",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "form",
+			"item": [
+				{
+					"name": "create_form",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "task-definition-key",
+								"value": "taskDefinitionKey",
+								"type": "text"
+							},
+							{
+								"key": "process-instance-id",
+								"value": "processInstanceId",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"testField\": \"testValue\"\r\n    },\r\n    \"x-access-token\": \"token\",\r\n    \"signature\": \"signature\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/form",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"form"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_form",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "task-definition-key",
+								"value": "taskDefinitionKey",
+								"type": "text"
+							},
+							{
+								"key": "process-instance-id",
+								"value": "processInstanceId",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/form",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"form"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_form_with_key",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "task-definition-key",
+								"value": "taskDefinitionKey",
+								"type": "text"
+							},
+							{
+								"key": "process-instance-id",
+								"value": "processInstanceId",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/formWithKey",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"formWithKey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_forms",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "task-definition-key",
+								"value": "taskDefinitionKey",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "process-instance-id",
+								"value": "processInstanceId",
+								"type": "text"
+							},
+							{
+								"key": "keys",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/form",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"form"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "create_payload",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "uuid",
+								"type": "text"
+							},
+							{
+								"key": "process-definition-key",
+								"value": "processDefinitionKey",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"testField\": \"testValue3\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_payload",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "key",
+								"value": "process-definition/processDefinitionKey/start-message/uuid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_payload",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "key",
+								"value": "process-definition/processDefinitionKey/start-message/uuid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/message",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "create_file_data",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "process-instance-id",
+								"value": "instanceId",
+								"type": "text"
+							},
+							{
+								"key": "file-id",
+								"value": "fileId",
+								"type": "text"
+							},
+							{
+								"key": "content",
+								"value": "content",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contentLength\": 123,\r\n    \"contentType\": \"application/png\",\r\n    \"userMetadata\": {\r\n        \"test\": \"test\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/file",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_file_data",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "process-instance-id",
+								"value": "instanceId",
+								"type": "text"
+							},
+							{
+								"key": "file-id",
+								"value": "fileId",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/file",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_metadata",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "process-instance-id",
+								"value": "instanceId",
+								"type": "text"
+							},
+							{
+								"key": "file-id",
+								"value": "fileId",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/metadata",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_file_data",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "process-instance-id",
+								"value": "instanceId",
+								"type": "text"
+							},
+							{
+								"key": "id",
+								"value": "fileIdt",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{host}}/file",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080"
+		}
+	]
+}
